@@ -3,7 +3,7 @@
 {% block content %}
     <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
         <fieldset class="form-group">
-            <legend>Login</legend>
+            <legend>Login</legend><br><br>
             {% csrf_token %}
             {{ user_form | as_bootstrap }}
             
