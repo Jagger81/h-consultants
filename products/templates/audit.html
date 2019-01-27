@@ -2,27 +2,41 @@
 {% load staticfiles %}
 
 {% block content %}
-    <section class="container">
-        <ol class="breadcrumb bcrumb-margins">
-            <li class="breadcrumb-item">
-                <a href="{% url 'index' %}">Home</a>
-            </li>
-            <li class="breadcrumb-item active">Products</li>
-        </ol>
-        <h2>Our Products</h2>
-        <br>
-        <div class="row">
-            <article class="card col-xs-12 col-sm-6">
-                <a class="hover-link" href="/products/audit">
-                    <div class="zoom">
-                        <img class="img-responsive" src="{% static 'img/categories/audit.jpg' %}" alt="Audits">
-                        <div class="overlay">
-                            <h1>See our products</h1>
-                        </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ol class="breadcrumb bcrumb-margins">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{% url 'products' %}">Products</a>
+                </li>
+                <li class="breadcrumb-item active">Audits & System Reviews</li>
+            </ol>
+            <h2>Audits & System Reviews</h2>
+            <!-- As the loop iterates through the contents of products_list, it assigns the current Product object in the list to the 'product' variable. -->
+            {% for product in products_list %}
+                <div class="row list_item">
+                    <div class="col-xs-12 col-sm-4"><img class="product_image" src="{{ STATIC_URL }}{{ product.image }}"></div>
+                    <div class="col-xs-12 col-sm-8">
+                        <h3>{{ product.name }}</h3>
+                        <p>{{ product.description }}</p>
+                        <p><strong>&pound;{{ product.price }}</strong></p>
+
+                        <form method="post" action="{% url 'add_to_cart' product.id %}">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input name="quantity" type="number" min="1" max="999" value="1" class="form-control" placeholder="Quantity">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success" type="submit">Add</button>
+                                </span>
+                            </div>
+                        </form>
                     </div>
-                    <h2 class="product-heading">Audits & Systems Reviews</h2>
-                </a>
-            </article>
+                </div>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+    </div>
 {% endblock %}
