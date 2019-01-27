@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <section class="container">
+        <ol class="breadcrumb bcrumb-margins">
+            <li class="breadcrumb-item">
+                <a href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Products</li>
+        </ol>
+        <h2>Our Products</h2>
+        <br>
+        <div class="row">
+            <article class="card col-xs-12 col-sm-6">
+                <a class="hover-link" href="/products/audit">
+                    <div class="zoom">
+                        <img class="img-responsive" src="{% static 'img/categories/audit.jpg' %}" alt="Audits">
+                        <div class="overlay">
+                            <h1>See our products</h1>
+                        </div>
+                    </div>
+                    <h2 class="product-heading">Audits & Systems Reviews</h2>
+                </a>
+            </article>
+        </div>
+    </section>
+{% endblock %}
