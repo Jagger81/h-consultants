@@ -18,7 +18,7 @@
             <!-- As the loop iterates through the contents of products_list, it assigns the current Product object in the list to the 'product' variable. -->
             {% for product in products_list %}
                 <div class="row list_item">
-                    <div class="col-xs-12 col-sm-4"><img class="product_image" src="{{ STATIC_URL }}{{ product.image }}"></div>
+                    <div class="col-xs-12 col-sm-8 product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
                     <div class="col-xs-12 col-sm-8">
                         <h3>{{ product.name }}</h3>
                         <p>{{ product.description }}</p>
