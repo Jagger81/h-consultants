@@ -1,1 +1,1 @@
-web: gunicorn h-consultants.wsgi:application
+web: gunicorn hconsultants.wsgi:application
