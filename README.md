@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/Jagger81/h-consultants.svg?branch=master)](https://travis-ci.org/Jagger81/h-consultants)
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
