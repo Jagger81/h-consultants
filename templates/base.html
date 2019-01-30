@@ -88,13 +88,29 @@
     </div>
   </header><!-- #header -->
 
-  
+   
   <!--==========================
     Block Content
   ============================-->
   
-  {% block content %} {% endblock %}
-  
+  {% if messages %}
+        <div class="alert alert-success">
+            <div class="messages">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="display">
+            <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        {% block content %} {% endblock %}
+    </div>
   
   <!--==========================
     Footer
