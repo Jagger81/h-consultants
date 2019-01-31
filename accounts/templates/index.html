@@ -47,7 +47,7 @@
 
       <div id="logo" class="pull-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="#intro"><img src="{% static 'img/HC_logo.png' %}" alt="" title="" /></a>
+        <a href="{% url 'index' %}"><img src="{% static 'img/HC_logo.png' %}" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -57,7 +57,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
-          <li class="menu-has-children"><a href="">Products</a>
+          <li class="menu-has-children"><a href="{% url 'products' %}">Products</a>
             <ul>
               <li><a href="{% url 'audit' %}">Audit/Systems Review</a></li>
               <li><a href="{% url 'manuals' %}">Manuals</a></li>
