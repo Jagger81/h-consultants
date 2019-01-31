@@ -10,6 +10,13 @@
             <li class="breadcrumb-item active">Products</li>
         </ol>
         <h2>Our Products</h2>
+        <div class="container">
+        <div class="display">
+            <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q">
+                <button type="submit">Search</button>
+            </form>
+        </div>
         <br>
         <div class="row">
             <article class="card col-xs-12 col-sm-6">
