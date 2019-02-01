@@ -68,7 +68,9 @@
               <li><a href="{% url 'training' %}">Training/Workshops</a></li>
             </ul>
           </li>
+          
           <li class="menu-has-children"><a href="{% url 'products' %}">User Account</a>
+          
             <ul>
               <{% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
@@ -77,6 +79,7 @@
                         <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
                         <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
                     {% endif %}
+                    {% if product_count > 0 %}
                     <li>
                         <a href="{% url 'view_cart' %}">
                             <i class="fa fa-shipping-cart"></i> Cart
@@ -84,7 +87,8 @@
                             <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
                         </a>
-                    </li> 
+                    </li>
+                    {% endif %}
             </ul>
            </li>
           
