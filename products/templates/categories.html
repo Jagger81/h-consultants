@@ -18,7 +18,7 @@
             </form>
         </div>
         <br>
-        <div class="row">
+        <!--<div class="row">
             <article class="card col-xs-12 col-sm-6">
                 <a class="hover-link" href="/products/training">
                     <div class="zoom">
@@ -63,19 +63,23 @@
                     <h2 class="product-heading">Audits & Systems Reviews</h2>
                 </a>
             </article>
-        </div>
+        </div>-->
     </section>
     
+    
+    
+    
     <br>
-    <div class="row row-flex">
-    {% for product in products %}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-            <div class="panel-body">
+    <div class ="container">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-sm-12 col-md-6 col-lg-4">
+             <div class="panel-body">
                 <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
-                <h3>{{ product.name }}</h3>
+                <h2>{{ product.name }}</h2>
                 <p class="product-description">{{ product.description }}</p>
-                <p>{{ product.price }}</p><br>
+                <p class="product-description">€{{ product.price }}</p>
 
                 <form method="post" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
@@ -86,9 +90,10 @@
                         </span>
                     </div>
                 </form>
+               </div> 
             </div>
-        </div>
-    {% endfor %}
-</div>
+            {% endfor %}
+        </div><br>
+    </div>
 
 {% endblock %}

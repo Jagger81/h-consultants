@@ -1,15 +1,8 @@
 body {
     font-family: Arial;
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
-footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: 1px solid #ededed;
-    color: #A9A9A9;
-}
 
 .icon-bar {
     background-color: #fff;
@@ -20,16 +13,16 @@ footer {
 }
 
 .badge {
-    padding-left: 9px;
-    padding-right: 9px;
+    padding: 9px;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
-    border-radius: 9px;
+    border-radius: 15px;
 }
 
 .label-warning[href],
 .badge-warning[href] {
-    background-color:  #c67605;
+    color: #f8f9fa;
+    background-color: #dc3545;
 }
 
 .product {
@@ -39,6 +32,7 @@ footer {
     width: 150px;
     height: 150px;
     margin: 0 auto;
+    margin-bottom: 25px;
 }
 
 caption p {
@@ -58,9 +52,12 @@ caption p {
 
 .panel-body {
     height: 100%;
-    border: 1px solid #ddd;
+    border: 5px solid #98f5aa;
+    padding: 15px 15px 0px;
+    margin-bottom: 25px;
 }
 
 .product-description {
     min-height: 40px;
+    font-weight: bold;
 }
