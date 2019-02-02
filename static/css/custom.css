@@ -61,3 +61,7 @@ caption p {
     min-height: 40px;
     font-weight: bold;
 }
+
+.btn {
+    margin: 2px;
+}

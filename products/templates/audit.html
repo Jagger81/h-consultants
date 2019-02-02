@@ -12,31 +12,37 @@
                 <li class="breadcrumb-item">
                     <a href="{% url 'products' %}">Products</a>
                 </li>
-                <li class="breadcrumb-item active">Audits & System Reviews</li>
+                <li class="breadcrumb-item active">System Audits</li>
             </ol>
-            <h2>Audits & System Reviews</h2>
-            <!-- As the loop iterates through the contents of products_list, it assigns the current Product object in the list to the 'product' variable. -->
-            {% for product in products_list %}
-                <div class="row list_item">
-                    <div class="col-xs-12 col-sm-8 product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-                    <div class="col-xs-12 col-sm-8">
-                        <h3>{{ product.name }}</h3>
-                        <p>{{ product.description }}</p>
-                        <p><strong>&pound;{{ product.price }}</strong></p>
-
-                        <form method="post" action="{% url 'add_to_cart' product.id %}">
-                            {% csrf_token %}
-                            <div class="input-group">
-                                <input name="quantity" type="number" min="1" max="999" value="1" class="form-control" placeholder="Quantity">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-success" type="submit">Add</button>
-                                </span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            {% endfor %}
         </div>
     </div>
     </div>
+    
+            <div class ="container">
+            <h2>System Audits</h2>
+            <!-- As the loop iterates through the contents of products_list, it assigns the current Product object in the list to the 'product' variable. -->
+            <div class="row">
+                {% for product in products_list %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="panel-body">
+                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+
+                <h2>{{ product.name }}</h2>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-description">€{{ product.price }}</p>
+
+                <form method="post" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Add</button>
+                        </span>
+                    </div>
+                </form>
+                </div> 
+                </div>
+            {% endfor %}
+            </div><br>
+            </div>
 {% endblock %}
