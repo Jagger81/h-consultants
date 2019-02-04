@@ -324,13 +324,13 @@ h1, h2, h3, h4, h5, h6 {
   content: "\f107";
   position: absolute;
   right: 15px;
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free' !important;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 900;
 }
 
 .sf-arrows ul .sf-with-ul:after {
-  content: "\f105";
+  content: "\f107";
 }
 
 /* Nav Meu Container */
