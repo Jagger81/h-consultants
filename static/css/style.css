@@ -333,6 +333,43 @@ h1, h2, h3, h4, h5, h6 {
   content: "\f107";
 }
 
+.fa-chevron-down:before {
+  content: "\f107";
+  position: absolute;
+  right: 15px;
+  font-family: 'Font Awesome 5 Free' !important;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.fa-chevron-up:before {
+  content: "\f106";
+  position: absolute;
+  right: 15px;
+  font-family: 'Font Awesome 5 Free' !important;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.fa-bars:before {
+  content: "\f0c9";
+  position: absolute;
+  right: 15px;
+  font-family: 'Font Awesome 5 Free' !important;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.fa-times:before {
+  content: "\f00d";
+  position: absolute;
+  right: 15px;
+  font-family: 'Font Awesome 5 Free' !important;
+  font-style: normal;
+  font-weight: 900;
+}
+
+
 /* Nav Meu Container */
 #nav-menu-container {
   float: right;
@@ -420,10 +457,51 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   #mobile-nav-toggle {
     display: inline;
   }
+  
+.fa-check-circle:before {
+    position: relative;
+    top: -10px;
+}
+
+.fa-book-open:before {
+    position: relative;
+    top: -10px;
+}
+
+.fa-file-excel:before {
+    position: relative;
+    top: -10px;
+}
+
+.fa-chalkboard-teacher:before {
+    position: relative;
+    top: -10px;
+}
+
+.fa-user-plus:before {
+    position: relative;
+    top: -10px;
+}
+
+.fa-sign-in-alt:before {
+    position: relative;
+    top: -10px;
+}
+
+.fa-sign-out-alt:before {
+    position: relative;
+    top: -10px;
+}
+
+.fa-user:before {
+    position: relative;
+    top: -10px;
+}
+
 }
 
 /* Mobile Nav Styling */
