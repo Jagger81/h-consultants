@@ -23,9 +23,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
   <!-- Libraries CSS Files -->
-  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
   <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
-  <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
   <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
   <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
 
@@ -76,7 +74,7 @@
               <a href="">User Account</a>
               
             <ul>
-                {% if user.is_authenticated %}
+                    {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a></li>
                         <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
                     {%  else %}

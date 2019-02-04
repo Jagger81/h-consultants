@@ -24,9 +24,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
   <!-- Libraries CSS Files -->
-  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
   <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
-  <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
   <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
   <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
 
@@ -49,7 +47,7 @@
   <!--==========================
     Header
   ============================-->
-  <header id="header" class="header-scrolled">
+  <header id="header">
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
@@ -60,33 +58,37 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <!--<li class="menu-active"><a href="#intro">Home</a></li>-->
-          <li><a href="{% url 'index' %}#about">About Us</a></li>
-          <li><a href="{% url 'index' %}#services">Services</a></li>
-          <li><a href="{% url 'index' %}#portfolio">Portfolio</a></li>
-          <li><a href="{% url 'index' %}#team">Team</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+          
           <li class="menu-has-children"><a href="{% url 'products' %}">Products</a>
             <ul>
-              <li><a href="{% url 'audit' %}">Audit/Systems Review</a></li>
-              <li><a href="{% url 'manuals' %}">Manuals</a></li>
-              <li><a href="{% url 'templates' %}">Templates</a></li>
-              <li><a href="{% url 'training' %}">Training/Workshops</a></li>
+              <li><a href="{% url 'audit' %}"><i class="far fa-check-circle"></i> Audit/Systems Review</a></li>
+              <li><a href="{% url 'manuals' %}"><i class="fas fa-book-open"></i> Manuals</a></li>
+              <li><a href="{% url 'templates' %}"><i class="fas fa-file-excel"></i> Templates</a></li>
+              <li><a href="{% url 'training' %}"><i class="fas fa-chalkboard-teacher"></i> Training/Workshops</a></li>
             </ul>
-          </li>
-          
-          <li class="menu-has-children"><a href="{% url 'products' %}">User Account</a>
-          
+           
+           <li class="menu-has-children">
+              {% if product_count > 0 %}
+                  <label class="badge badge-warning">{{ product_count }}</label>
+              {% endif %}
+              <a href="">User Account</a>
+              
             <ul>
-              <{% if user.is_authenticated %}
-                        <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
-                        <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
                     {%  else %}
-                        <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
-                        <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
+                        <li><a href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Register</a></li>
+                        <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Log In</a></li>
                     {% endif %}
                     {% if product_count > 0 %}
                     <li>
                         <a href="{% url 'view_cart' %}">
-                            <i class="fa fa-shipping-cart"></i> Cart
+                            <i class="fas fa-shopping-cart"></i> Cart
                             {% if product_count > 0 %}
                             <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
@@ -96,7 +98,7 @@
             </ul>
            </li>
           
-          <li><a href="{% url 'index' %}#contact">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -127,10 +129,10 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="fas fa-angle-right"></i> <a href="{% url 'index' %}#about">Home</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="{% url 'index' %}#about">About us</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="{% url 'index' %}#services">Services</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="{% url 'index' %}#intro">Terms of service</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="{% url 'index' %}#intro">Privacy policy</a></li>
+              <li><i class="fas fa-angle-right"></i> <a href="{% url 'index' %}#about">About us</a></li>
+              <li><i class="fas fa-angle-right"></i> <a href="{% url 'index' %}#services">Services</a></li>
+              <li><i class="fas fa-angle-right"></i> <a href="{% url 'index' %}#intro">Terms of service</a></li>
+              <li><i class="fas fa-angle-right"></i> <a href="{% url 'index' %}#intro">Privacy policy</a></li>
             </ul>
           </div>
 
