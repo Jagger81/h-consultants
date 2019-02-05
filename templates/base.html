@@ -58,10 +58,10 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <!--<li class="menu-active"><a href="#intro">Home</a></li>-->
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
+          <li><a href="{% url 'index' %}#about">About Us</a></li>
+          <li><a href="{% url 'index' %}#services">Services</a></li>
+          <li><a href="{% url 'index' %}#portfolio">Portfolio</a></li>
+          <li><a href="{% url 'index' %}#team">Team</a></li>
           
           <li class="menu-has-children"><a href="{% url 'products' %}">Products</a>
             <ul>
@@ -98,7 +98,7 @@
             </ul>
            </li>
           
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="{% url 'index' %}#contact">Contact</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
