@@ -127,6 +127,10 @@ Technologies used in this project include:
 * Balsamiq: Used to create the below wireframes.
 * Cloud9 IDE used as development environment workspace
 * The project uses **JQuery** to simplify DOM manipulation.
+* STRIPE is used for payment functionality
+* TRAVIS CI is used for checking the application build
+* Amazon S3 Bucket is used for storage of static files
+* FormCarry is used for actioning the Contact Form (still to be fully implemented)
 
 
 ## Testing
