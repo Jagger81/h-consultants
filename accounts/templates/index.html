@@ -821,8 +821,10 @@
             <div class="form-group">
               <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
               <div class="validation"></div>
+            
+            {% csrf_token %}
             </div>
-            <div class="text-center"><input type="submit" name="submit" value="Send Message"></div>
+            <input class="btn btn-success" id="send_message" name="send" type="submit" value="Send Message">
           </form>
         </div>
 
