@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/Jagger81/h-consultants.svg?branch=master)](https://travis-ci.org/Jagger81/h-consultants)
 
-# Djano Project
+# Django Project
 
 ## Humanitarian Consultants
 
@@ -60,21 +60,28 @@ There are identical pages established for each Category of Products (Workshops/T
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
-- 
+- Filter on Portfolio of Services section
+- User Registration
+- User authentication (login and log out)
+- Authentication messages
+- Shopping Cart
+- Checkout (using Stripe for payment authentication)
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
-- Another feature idea
+
+The following are features that required futher work and would be implemented in subsequent real-life implementation
+
+- Contact form
+- Quantity field for Products not being allows to remain as zero
+- Portfolio images link would ideally open a modal to provide more info on the respective service
 
 
 ## Technologies used
 
 Technologies used in this project include:
 
-* Materialize: Materializecss was used for a basic HTML templates and styling.
+* Bootstrap: *BizPage* template available from <a href="https://bootstrapmade.com/bizpage-bootstrap-business-template/" target="_blank" >bootstrapmade.com</a> was used for HTML and CSS styling.
 * HTML5/CSS: Used for the layout and styling of the application.
 * Python 3.4.3: The back end functionality of the application was written entirely in python 3.0.
   Was originally running on Python 2, following code was executed to upgrade:
@@ -84,17 +91,53 @@ Technologies used in this project include:
   jagger81:~/workspace (master) $ python --version
   Python 3.4.3
   ~~~~
-* Flask Microframework: Flask was used to extend pythons functionality to the frond end.
+* Django framework: used to expedite the clean design and devlopment of the application.
 * Balsamiq: Used to create the below wireframes.
 * Cloud9 IDE used as development environment workspace
 * The project uses **JQuery** to simplify DOM manipulation.
-* STRIPE is used for payment functionality
-* TRAVIS CI is used for checking the application build
-* Amazon S3 Bucket is used for storage of static files
-* FormCarry is used for actioning the Contact Form (still to be fully implemented)
+* STRIPE is used for payment functionality.
+* TRAVIS CI is used for checking the application build.
+* Amazon S3 Bucket is used for storage of static files.
+* FormCarry is used for actioning the Contact Form (still to be fully implemented).
+* PostgresSQL connection via Heroku
 
 
 ## Testing
+
+Mainly manual testing used throughout - for routing and checking if data is properly rendered in the correct template and format.
+
+Basic testing included:
+
+DB Connection
+SuperUser login working correctly
+Adding new records to the database
+Editing database records
+Ensuring the "settings.py" is configured correctly
+Rendering data / images
+Many GitHub commits will contain the prefix TESTING
+
+Pep 8 was used to assist with cleaning the data - indentation, whitespaces, non-spaces, 2 lines expected
+
+http://pep8online.com/
+
+Stripe test payment received successfully:
+
+![payment_success](https://user-images.githubusercontent.com/28737216/53303942-24671380-3868-11e9-8b49-ea812625dec4.PNG)
+
+Test builds were consistently checked also, via both Travis CI and Heroku:
+
+![build_passed1](https://user-images.githubusercontent.com/28737216/53303959-57110c00-3868-11e9-9505-7389bca984c5.PNG)
+
+![build_passed2](https://user-images.githubusercontent.com/28737216/53303960-57110c00-3868-11e9-9d56-baaeb8f26c80.PNG)
+
+
+Basic testing of Products was also performed:
+
+PASS:
+![test products](https://user-images.githubusercontent.com/28737216/53303988-79a32500-3868-11e9-81b3-3d74471178e7.PNG)
+
+FAIL:
+![test products_fail](https://user-images.githubusercontent.com/28737216/53303989-7a3bbb80-3868-11e9-9ea3-ff5bf8c19da8.PNG)
 
 
 
