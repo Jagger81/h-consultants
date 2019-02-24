@@ -143,6 +143,74 @@ FAIL:
 
 ## Deployment
 
+The following steps are how this application was deployed:
+
+1.	Set-up new workspace in C9
+2.	Using the bash terminal install the relevant version of Django:
+a.	Sudo pip3 install django==1.11
+3.	Create a django project: “django-admin startproject hconsultants .”
+4.	Open the “settings.py” file and add C9 as an allowed host [(os.environ.get(‘C9_HOSTNAME’)]
+5.	Run the server: “python3 manage.py runserver $IP:$C9_PORT” 
+6.	Show Hidden Files in C9 settings and open the “.bash_aliases” file and insert the following text;  run=” python3 ~/workspace/manage.py runserver $IP:$C9_PORT”, this means you don’t need to type the full string in step 3 above each time you want to run the server (instead, you just type the word “run”)
+7.	Close the terminal and reopen it to make this alias available.
+8.	Initiate a GIT Repo (git init)
+9.	echo ‘*.sqlite3’ >> .gitignore
+10.	git add --all
+11.	git remote add origin https://github.com/Jagger81/h-consultants.git
+12.	git push origin master
+13.	Add “accounts” folder and import app_authentication files (File>Upload Local Files)
+14.	Add “templates” folder, same as above (from “templates folder”)
+15.	Create top level “static” folder, then “css” and create a “custom.css” file
+16.	Update settings:  wire it all up.  Add ‘accounts’ as an installed app in the “settings.py” file
+a.	Add “AUTHENTICATION_BACKENDS” and “MESSAGE_STORAGE”
+17.	Run “python3 manage.py makemigrations”
+18.	Run “python3 manage.py makemigrations accounts” (no changes noted in either app)
+19.	Run “python3 manage.py migrate”
+20.	Changes made to urls.py (see git commits)
+21.	Run “sudo pip3 install django-forms-bootstrap”
+22.	Create a super user; “python3 manage.py createsuperuser” (call them ‘admin’ and create a password)
+23.	Add “django_forms_bootstrap” to installed apps in the settings.py file
+24.	Need to specify that all directories called “templates” essentially contain templates; “[os.path.join(BASE_DIR, ‘templates’)]” Line 59
+25.	Create a Home and Products app:
+a.	Python3 manage.py startapp home (run again and replace with “products”)
+26.	To allow the upload of images install Pillow: sudo pip3 install Pillow
+27.	Make migrations, etc.
+28.	Setup product URL’s / Views / Models and perform some styling
+29.	Ensure that STATIC has been added to the settings.py file
+30.	Sudo pip3 install stripe
+31.	Set up free Stripe account online (stripe.com)
+32.	Get API Keys (reveal secret key)
+33.	Insert STRIPE details in setting.py and create env.py file
+34.	Copy key details from Stripe website to env.py
+35.	Hide env.py file so it doesn’t get uploaded to GitHub;
+a.	Echo env.py >> .gitignore
+36.	To use this file, be sure to insert “import env” to your settings.py file
+37.	Python3 manage.py startapp checkout
+38.	Add ‘checkout’ to list of apps in setting.py file
+39.	Create models.py file under checkout app
+40.	Update admin.py file of the account app, add those models
+41.	Create STRIPE settings and Checkout.html
+42.	Create Heroku app and go to “Resources” > Add-ons to create a database:
+a.	Postgres database (free-hobby)
+b.	Copy key from Config_Vars
+43.	Return to C9 and run:
+a.	 ‘sudo pip3 install dj-database-url’ 
+b.	‘sudo pip3 install psycopg2’ (package for connect two postgres databases)
+c.	‘pip3 freeze > requirements.txt’  (heroku will need these dependancies to build the app)
+44.	Update settings.py and env.py (with database details and secret_key)
+45.	Run ‘python3 manage.py migrate’ (to migrate existing migrations to our new postgres database)
+46.	Because it’s totally new and blank database we need to create a superuser:
+a.	‘python3 manage.py createsuperuser’
+47.	Set up AWS Account and S3 bucket
+48.	Run ‘sudo pip3 install django-storages’
+49.	Run ‘sudo pip3 install boto3’ (these allow Django to connect to AWS S3)
+50.	Change settings.py and env.py files
+51.	Run ‘python3 manage.py collectstatic’
+52.	Create ‘custom.storages.py’ and update settings.py file
+53.	Set up Travis CI and change settings.py file
+54.	Set Config Vars Heroku and connect to Git Hub repo
+55.	Run ‘sudo pip3 install gunicorn’ (package required to connect to Heroku”
+56.	Update requirements.txt and add Procfile
 
 
 In addition, you can clone or download the code from this GitHub repository.
