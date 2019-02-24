@@ -4,7 +4,7 @@
 
 ## Humanitarian Consultants
 
-This is a basic online recipe book for various users.  Features include viewing, editing and adding recipes - additional features may be added in the future.  The full application can be viewed <a href="https://basic-recipe-book.herokuapp.com/" target="_blank" >here</a>.
+This is a basic online recipe book for various users.  Features include viewing, editing and adding recipes - additional features may be added in the future.  The full application can be viewed <a href="https://humanitarian-consultants.herokuapp.com/" target="_blank" >here</a>.
  
 ## UX
 
@@ -28,27 +28,32 @@ This web application is aimed at Humanitarian professionals that work on providi
 
 ### Wireframes / Mockups:
 
-The following are the initial mockups, based on the Materialize *Parallax* template that was used:
+The following are the initial mockups, based on the *BizPage* template available from <a href="https://bootstrapmade.com/bizpage-bootstrap-business-template/" target="_blank" >bootstrapmade.com</a>:
 
 #### Index / Landing Page:
 
+![hc_index](https://user-images.githubusercontent.com/28737216/53301771-dbef2c00-384e-11e9-863b-da7b2ae4176c.PNG)
 
+The index page will also include the following sections when the user scrolls down through the page:
+- About Us
+- Services/Portfolio of Services
+- Testimonials
+- Team details
+- Contact Form (design only - not fully initiated)
 
-#### Recipes Page:
+#### Products Page:
 
+![hc_products](https://user-images.githubusercontent.com/28737216/53301772-dbef2c00-384e-11e9-9650-6e0aa43525d2.PNG)
 
+There are identical pages established for each Category of Products (Workshops/Trainings, Manuals/Guidelines, Templates, System Audits)
 
-#### View Recipe Page <recipe_id>:
+#### Shopping Cart:
 
+![hc_cart](https://user-images.githubusercontent.com/28737216/53301769-dbef2c00-384e-11e9-9300-fbe24c8f06f9.PNG)
 
+#### Checkout:
 
-#### Edit Recipe Page <recipe_id>:
-
-
-
-#### Add/Insert Recipe Page:
-
-
+![hc_checkout](https://user-images.githubusercontent.com/28737216/53301770-dbef2c00-384e-11e9-98c2-8d0180a54096.PNG)
 
 ## Features
 
