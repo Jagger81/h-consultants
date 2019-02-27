@@ -24,7 +24,42 @@ This web application is aimed at Humanitarian professionals that work on providi
 
 ### Data Schema:
 
+The django administration panel was used to add items to the Products and Orders tables.  The following code was used to establish the required models:
 
+Products (products app / models.py):
+
+~~~
+class Product(models.Model):
+    category = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    image = models.ImageField(upload_to='static/img')
+~~~
+
+Orders (checkout app / models.py):
+
+~~~
+class Order(models.Model):
+    full_name = models.CharField(max_length=50, blank=False)
+    phone_number = models.CharField(max_length=20, blank=False)
+    country = models.CharField(max_length=40, blank=False)
+    postcode = models.CharField(max_length=20, blank=True)
+    town_or_city = models.CharField(max_length=40, blank=False)
+    street_address1 = models.CharField(max_length=40, blank=False)
+    street_address2 = models.CharField(max_length=40, blank=False)
+    county = models.CharField(max_length=40, blank=False)
+    date = models.DateField()
+    
+    def __str__(self):
+        return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
+        
+        
+class OrderLineItem(models.Model):
+    order = models.ForeignKey(Order, null=False)
+    product = models.ForeignKey(Product, null=False)
+    quantity = models.IntegerField(blank=False)
+~~~
 
 ### Wireframes / Mockups:
 
@@ -218,13 +253,9 @@ In addition, you can clone or download the code from this GitHub repository.
 
 ## Credits
 
-### Content
-- 
+The template used in this project is the *BizPage* template available from <a href="https://bootstrapmade.com/bizpage-bootstrap-business-template/" target="_blank" >bootstrapmade.com</a>.  Testimonial / Team and Portfolio images are supplied with the template.
 
-### Media
-- 
 
 ### Acknowledgements
 
-- I received inspiration for this project from https://myfoodbook.com.au and https://www.bbcgoodfood.com
 - I would also like to acknowledge the help received from the Slack Community in helping solve some of the issues realted to this project.
