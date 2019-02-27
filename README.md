@@ -143,11 +143,11 @@ FAIL:
 
 ## Deployment
 
-The following steps are how this application was deployed:
+The following steps are how this application was deployed, using Cloud 9 IDE:
 
 1.	Set-up new workspace in C9
 2.	Using the bash terminal install the relevant version of Django:
-a.	Sudo pip3 install django==1.11
+   * Sudo pip3 install django==1.11
 3.	Create a django project: “django-admin startproject hconsultants .”
 4.	Open the “settings.py” file and add C9 as an allowed host [(os.environ.get(‘C9_HOSTNAME’)]
 5.	Run the server: “python3 manage.py runserver $IP:$C9_PORT” 
@@ -162,7 +162,7 @@ a.	Sudo pip3 install django==1.11
 14.	Add “templates” folder, same as above (from “templates folder”)
 15.	Create top level “static” folder, then “css” and create a “custom.css” file
 16.	Update settings:  wire it all up.  Add ‘accounts’ as an installed app in the “settings.py” file
-a.	Add “AUTHENTICATION_BACKENDS” and “MESSAGE_STORAGE”
+    * Add “AUTHENTICATION_BACKENDS” and “MESSAGE_STORAGE”
 17.	Run “python3 manage.py makemigrations”
 18.	Run “python3 manage.py makemigrations accounts” (no changes noted in either app)
 19.	Run “python3 manage.py migrate”
@@ -172,7 +172,7 @@ a.	Add “AUTHENTICATION_BACKENDS” and “MESSAGE_STORAGE”
 23.	Add “django_forms_bootstrap” to installed apps in the settings.py file
 24.	Need to specify that all directories called “templates” essentially contain templates; “[os.path.join(BASE_DIR, ‘templates’)]” Line 59
 25.	Create a Home and Products app:
-a.	Python3 manage.py startapp home (run again and replace with “products”)
+    * Python3 manage.py startapp home (run again and replace with “products”)
 26.	To allow the upload of images install Pillow: sudo pip3 install Pillow
 27.	Make migrations, etc.
 28.	Setup product URL’s / Views / Models and perform some styling
@@ -183,7 +183,7 @@ a.	Python3 manage.py startapp home (run again and replace with “products”)
 33.	Insert STRIPE details in setting.py and create env.py file
 34.	Copy key details from Stripe website to env.py
 35.	Hide env.py file so it doesn’t get uploaded to GitHub;
-a.	Echo env.py >> .gitignore
+    * Echo env.py >> .gitignore
 36.	To use this file, be sure to insert “import env” to your settings.py file
 37.	Python3 manage.py startapp checkout
 38.	Add ‘checkout’ to list of apps in setting.py file
@@ -191,27 +191,27 @@ a.	Echo env.py >> .gitignore
 40.	Update admin.py file of the account app, add those models
 41.	Create STRIPE settings and Checkout.html
 42.	Create Heroku app and go to “Resources” > Add-ons to create a database:
-a.	Postgres database (free-hobby)
-b.	Copy key from Config_Vars
+    * Postgres database (free-hobby)
+    * Copy key from Config_Vars
 43.	Return to C9 and run:
-a.	 ‘sudo pip3 install dj-database-url’ 
-b.	‘sudo pip3 install psycopg2’ (package for connect two postgres databases)
-c.	‘pip3 freeze > requirements.txt’  (heroku will need these dependancies to build the app)
+    * ‘sudo pip3 install dj-database-url’ 
+    * ‘sudo pip3 install psycopg2’ (package for connect two postgres databases)
+    * ‘pip3 freeze > requirements.txt’  (heroku will need these dependancies to build the app)
 44.	Update settings.py and env.py (with database details and secret_key)
 45.	Run ‘python3 manage.py migrate’ (to migrate existing migrations to our new postgres database)
 46.	Because it’s totally new and blank database we need to create a superuser:
-a.	‘python3 manage.py createsuperuser’
+    * ‘python3 manage.py createsuperuser’
 47.	Set up AWS Account and S3 bucket
 48.	Run ‘sudo pip3 install django-storages’
 49.	Run ‘sudo pip3 install boto3’ (these allow Django to connect to AWS S3)
-50.	Change settings.py and env.py files
+50.	Change settings.py and env.py files (to include any Secret Keys, et.)
 51.	Run ‘python3 manage.py collectstatic’
 52.	Create ‘custom.storages.py’ and update settings.py file
 53.	Set up Travis CI and change settings.py file
 54.	Set Config Vars Heroku and connect to Git Hub repo
-55.	Run ‘sudo pip3 install gunicorn’ (package required to connect to Heroku”
+55.	Run ‘sudo pip3 install gunicorn’ (package required to connect to Heroku)
 56.	Update requirements.txt and add Procfile
-
+57. Deploy application via Heroku
 
 In addition, you can clone or download the code from this GitHub repository.
 
